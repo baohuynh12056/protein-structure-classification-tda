@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, precision_recall_fscore_support, confusion_matrix
 
 
-class TraditionalSVMClassifier:
+class SVMClassifier:
     def __init__(self, kernel='rbf', C=1.0, gamma='scale', test_size=0.2, random_state=42, scaler=None, verbose=True):
         self.kernel = kernel
         self.C = C
