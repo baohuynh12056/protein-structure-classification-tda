@@ -1,0 +1,9 @@
+scipy
+joblib
+scikit-learn
+biopython
+gudhi
+matplotlib
+pandas
+rcsb-api
+seaborn
