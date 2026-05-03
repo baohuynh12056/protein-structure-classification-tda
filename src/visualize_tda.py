@@ -29,17 +29,14 @@ def generate_tda_visualizations():
     for record in dataset:
         pid = record["pdb_id"]
         
-        # Chỉ vẽ cho các protein đại diện để tiết kiệm thời gian
         if pid in REPRESENTATIVE_PROTEINS:
             points = record["point_cloud"]
             print(f"[*] Đang vẽ biểu đồ cho {pid.upper()}...")
 
-            # Khởi tạo lại Rips để vẽ (do không lưu object Rips từ file tda.py)
             rips = gd.RipsComplex(points=points, max_edge_length=2.0)
             st = rips.create_simplex_tree(max_dimension=2)
             persistence = st.persistence()
 
-            # Vẽ và lưu ảnh
             plot_h1_persistence_diagram(persistence, pid, save_dir=DIAGRAMS_DIR)
             plot_multidim_filtration(points, EPSILON_LIST, pid, save_dir=IMAGES_DIR)
 
