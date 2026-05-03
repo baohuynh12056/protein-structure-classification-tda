@@ -38,3 +38,16 @@ SVM_PARAMS = {
     "test_size": 0.3, 
     "random_state": 42
 }
+
+PARAMS = {
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": "scale",
+    "random_state": 42
+}
+
+PI_PARAMS = {
+    "bandwidth": 0.2,
+    "weight": lambda x: x[1], 
+    "resolution": [20, 20]    
+}

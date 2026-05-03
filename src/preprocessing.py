@@ -22,7 +22,6 @@ def fetch_pdb_ids_by_structure(structure_type, limit=20):
     polymer_query = AttributeQuery("entity_poly.rcsb_entity_polymer_type", "exact_match", "Protein")
     atom_query = AttributeQuery("rcsb_entry_info.deposited_atom_count", "less", 4000)
 
-    # Bỏ dấu ngoặc kép để tìm kiếm mờ (fuzzy search) tốt hơn
     if structure_type == "alpha_helix":
         q_struct = TextQuery("alpha helix OR mainly alpha")
     elif structure_type == "beta_sheet":
@@ -89,7 +88,7 @@ def preprocess_protein_data(groups, raw_dir=config.RAW_DATA_DIR, processed_dir=c
             file_path = os.path.join(raw_dir, f"{pdb_id}.pdb")
 
             if not os.path.exists(file_path):
-                continue # Bỏ qua nếu tải thất bại ở bước trước
+                continue
 
             try:
                 structure = parser.get_structure(pdb_id, file_path)
@@ -119,9 +118,9 @@ def preprocess_protein_data(groups, raw_dir=config.RAW_DATA_DIR, processed_dir=c
                 "label": label,
                 "point_cloud": pc_normalized
             })
-            print(f"[XỬ LÝ OK] {pdb_id.upper():<6} | Nhãn: {label:<12} | Số điểm CA: {pc_normalized.shape[0]}")
+            print(f"[DONE] {pdb_id.upper():<6} | Nhãn: {label:<12} | Số điểm CA: {pc_normalized.shape[0]}")
 
-    # Gọi utils để lưu vào thư mục tuyệt đối
+    # Lưu vào thư mục tuyệt đối
     saved_path = save_features_npy(
         features=dataset, 
         save_path=processed_dir, 
@@ -133,7 +132,6 @@ def preprocess_protein_data(groups, raw_dir=config.RAW_DATA_DIR, processed_dir=c
 
 if __name__ == "__main__":
     # Tham số limit_per_class=20 sẽ tự tải tổng cộng 60 mẫu cho 3 loại.
-    # Bạn có thể tăng số này lên (vd: 50, 100) tùy thuộc vào sức mạnh của máy.
     fetched_groups = download_pdb_data(limit_per_class=20)
     
     # Truyền trực tiếp danh sách vừa lấy được vào hàm tiền xử lý

@@ -3,16 +3,12 @@ import numpy as np
 import pandas as pd
 import gudhi as gd
 
-# Import hàm lưu từ utils.py
 from src.utils import save_features_npy
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 
-# Thư mục dữ liệu đầu vào và đầu ra
 PROCESSED_DATA_FILE = os.path.join(PROJECT_ROOT, "data", "processed", "protein_dataset_clean.npy")
-
-# Cập nhật đường dẫn lưu tính năng TDA theo đúng yêu cầu
 TDA_FEATURES_DIR = os.path.join(PROJECT_ROOT, "features", "tda_features")
 
 def get_h1_persistence_stats(persistence, pid, threshold=0.4):

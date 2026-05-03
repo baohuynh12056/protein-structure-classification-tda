@@ -62,7 +62,6 @@ def compute_geometric_features(processed_data_path, output_dir):
         label = record["label"]
         points = record["point_cloud"]
         
-        # Gọi hàm lõi
         f_geom = extract_single_geometric(points)
         
         # Đóng gói kết quả
@@ -92,7 +91,7 @@ def compute_pimage_features(processed_data_path, tda_features_path, output_dir):
         print("  [!] Lỗi: Thiếu dữ liệu đầu vào. Hãy chắc chắn đã chạy tda.py!")
         return
 
-    # Load dữ liệu gốc (để lấy Label) và dữ liệu TDA
+    # Load dữ liệu gốc và dữ liệu TDA
     dataset = np.load(processed_data_path, allow_pickle=True)
     h1_intervals_dict = np.load(tda_features_path, allow_pickle=True).item()
     
