@@ -1,0 +1,62 @@
+
+=========================================================
+[2026-05-04 03:45:36] MODEL: GEOMETRIC FEATURES
+=========================================================
+1. Hyperparameters:
+   - Kernel      : rbf
+   - C (Penalty) : 1.0
+   - Gamma       : scale
+
+2. Data Split:
+   - Total samples : 60
+   - Train / Test  : 42 / 18 (Test size: 30.0%)
+
+3. Performance Metrics:
+   - Accuracy    : 72.22%
+   - F1 (Macro)  : 0.7313
+   - Precision   : 0.7852
+   - Recall      : 0.7222
+
+4. Model Complexity:
+   - Total Support Vectors : 40
+   - SVs per class         : [13 14 13]
+
+5. Execution:
+   - Training + Eval Time  : 0.0033 seconds
+
+6. Confusion Matrix:
+[[4, 2, 0],
+ [1, 5, 0],
+ [0, 2, 4]]
+=========================================================
+
+=========================================================
+[2026-05-04 03:45:37] MODEL: TDA (PERSISTENCE IMAGE)
+=========================================================
+1. Hyperparameters:
+   - Kernel      : rbf
+   - C (Penalty) : 1.0
+   - Gamma       : scale
+
+2. Data Split:
+   - Total samples : 60
+   - Train / Test  : 42 / 18 (Test size: 30.0%)
+
+3. Performance Metrics:
+   - Accuracy    : 94.44%
+   - F1 (Macro)  : 0.9441
+   - Precision   : 0.9524
+   - Recall      : 0.9444
+
+4. Model Complexity:
+   - Total Support Vectors : 37
+   - SVs per class         : [13 14 10]
+
+5. Execution:
+   - Training + Eval Time  : 0.0069 seconds
+
+6. Confusion Matrix:
+[[6, 0, 0],
+ [0, 6, 0],
+ [0, 1, 5]]
+=========================================================
