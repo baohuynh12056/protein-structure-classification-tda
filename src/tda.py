@@ -1,6 +1,5 @@
 import os
 import numpy as np
-import pandas as pd
 import gudhi as gd
 
 from src.utils import save_features_npy
@@ -56,7 +55,6 @@ def process_tda():
     print(f"{'='*60}\n BẮT ĐẦU PHÂN TÍCH TDA (RIPS FILTRATION & H1)\n{'='*60}")
     dataset = np.load(PROCESSED_DATA_FILE, allow_pickle=True)
     
-    all_h1_stats = []
     tda_features_dict = {}
 
     for record in dataset:
