@@ -19,6 +19,7 @@ from src.utils import (
     plot_confusion_matrix, plot_model_comparison,
     plot_feature_space, plot_pca_decision_boundary, log_training_results 
 )
+from src.visualize_tda import generate_tda_visualizations
 
 def load_dataset_for_model(filepath):
     """
@@ -173,6 +174,8 @@ def main():
 
     print(f"\n[*] Toàn bộ Logs đã được lưu tại     : {os.path.join(LOG_DIR, 'training_logs.txt')}")
     print(f"[*] Toàn bộ Hình ảnh đã được xuất tại: {EVAL_DIR}")
+
+    generate_tda_visualizations()
 
 if __name__ == "__main__":
     main()
