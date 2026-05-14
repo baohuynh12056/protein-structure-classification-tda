@@ -57,7 +57,10 @@ def download_pdb_data(limit_per_class=20, raw_dir=config.RAW_DATA_DIR):
 
     for cls in classes:
         print(f"\n[*] Đang truy vấn API cho cấu trúc: {cls.upper()}...")
-        pdb_ids = fetch_pdb_ids_by_structure(cls, limit=limit_per_class)
+        if limit_per_class != 20:
+            pdb_ids = fetch_pdb_ids_by_structure(cls, limit=limit_per_class)
+        else: 
+            pdb_ids = config.PROTEIN_GROUPS[cls]
         dynamic_groups[cls] = pdb_ids
         print(f"  -> Tìm thấy {len(pdb_ids)} proteins: {pdb_ids}")
 

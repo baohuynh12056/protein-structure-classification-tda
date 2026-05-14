@@ -25,9 +25,9 @@ TDA_MODELS_DIR = os.path.join(PROJECT_ROOT, "models", "tda_models")
 RCSB_BASE_URL = "https://files.rcsb.org/download"
 
 PROTEIN_GROUPS = {
-    "alpha_helix": ["1ake", "2rhe", "1gcn"],
-    "beta_sheet":  ["1cd8", "2pka", "1qqt"],
-    "mixed":       ["1tim", "3tnd", "4hhb"],
+    "alpha_helix": ['1lt1', '3mgn', '3he4', '3miw', '3he5', '2yf2', '1ovv', '1jm0', '3lt6', '3h7x', '3lt7', '2xdj', '2zfc', '1ovr', '1fe6', '3if4', '1ec5', '2guv', '2q1k', '2wz7'],
+    "beta_sheet":  ['7p93', '3lkf', '6u2s', '6u33', '7p8s', '6u3f', '1pvl', '4q7g', '4i0n', '1qwy', '5azo', '2gu1', '2b13', '2b44', '2b0p', '3msw', '4dix', '1h09', '7p8x', '1oba'],
+    "mixed":       ['6e2a', '7l6p', '5gz2', '4xap', '5c7h', '5gvh', '5gyz', '2gjn', '2gjl', '6omz', '6cia', '6bka', '4pmj', '5v1t', '9ej8', '3bw2', '5syd', '4puw', '3bw3', '3hzs'],
 }
 
 
